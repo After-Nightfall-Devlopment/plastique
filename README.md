@@ -15,3 +15,7 @@ gcloud auth login
 ```
 terraform import google_firebase_project.plastique plastique-302800
 ```
+
+
+credentials are stored at: `Credentials saved to file: [/Users/davidwisnowski/.config/gcloud/application_default_credentials.json]
+`

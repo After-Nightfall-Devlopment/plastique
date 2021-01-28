@@ -1,5 +1,4 @@
 provider "google" {
-  credentials = file("CREDENTIALS_FILE.json")
   project     = "plastique-302800"
   region      = "us-west1"
 }
