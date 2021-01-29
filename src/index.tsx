@@ -9,9 +9,12 @@ import { createStore } from './configs/redux/store';
 import { createHashHistory } from 'history';
 import routes from './configs/constants/routes';
 import DashboardScreen from './components/top-level-components/Dashboard';
+import { initialize } from './creators/initialize';
 
 const history = createHashHistory(),
   store = createStore(history);
+
+store.dispatch(initialize('REDUX_TEST'));
 
 ReactDOM.render(
   <React.StrictMode>

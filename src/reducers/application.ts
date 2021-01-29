@@ -10,7 +10,7 @@ export default {
 
     switch (action.type) {
       case actions.INITIALIZE:
-        newState.defaultData = action.defaultData;
+        newState.dispatchedData = action.data;
         break;
       default:
         newState = state;
@@ -22,4 +22,5 @@ export default {
 
 export interface ApplicationState {
   defaultData: string;
+  dispatchedData: string;
 }
