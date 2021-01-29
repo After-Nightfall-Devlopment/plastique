@@ -27,7 +27,9 @@ export async function renderAsyncWithRedux(
 }
 
 export const initialState = {
-  applicationState: {},
+  applicationState: {
+    defaultData: 'TESTING_DEFAULT',
+  },
 };
 
 export function getStore(state: any, dispatchMock: any): MockStore {
