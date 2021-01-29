@@ -1,23 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Styles } from '@material-ui/styles';
+import {
+  Theme,
+  WithStyles,
+  withStyles,
+  StyledComponentProps,
+  ThemeProvider as MuiThemeProvider,
+} from '@material-ui/core/styles';
+import { getLightTheme } from './configs/theme/light-theme';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const styles: Styles<Theme, StyledComponentProps> = () => ({});
+
+class App extends Component<AppProps> {
+  render(): JSX.Element {
+    const { classes } = this.props;
+
+    return (
+      <MuiThemeProvider theme={getLightTheme()}>
+        <div>{this.props.children}</div>
+      </MuiThemeProvider>
+    );
+  }
 }
 
-export default App;
+export interface AppProps extends WithStyles<typeof styles> {
+  children: JSX.Element;
+}
+
+export default withStyles(styles, { withTheme: true })(App);
