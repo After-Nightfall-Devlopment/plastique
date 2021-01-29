@@ -16,15 +16,12 @@ module.exports = {
     coverageDirectory: "coverage",
     coveragePathIgnorePatterns: [
         "/coverage/",
-        "/dist/",
         "/node_modules/",
-        "/src/__tests__/test-utils",
         "/src/configs",
-        "/src/serviceWorker.ts",
-        "/src/setupTests.ts",
         "/src/react-app-env.d.ts",
         "externals.d.ts",
         "/src/index.tsx",
+        "/src/App.tsx",
         "/src/local-storage/",
         "/src/models",
         "/src/types"
@@ -42,11 +39,11 @@ module.exports = {
     },
     rootDir: ".",
     setupFiles: [
-        "<rootDir>/src/chanceSetup.ts"
+        "<rootDir>/src/configs/test-setup/chance-setup.ts"
     ],
     setupFilesAfterEnv: [
         "jest-extended",
-        "<rootDir>/src/setupTests.ts"
+        "<rootDir>/src/configs/test-setup/setup-tests.ts"
     ],
     testEnvironment: "jsdom",
     testMatch: [
@@ -59,6 +56,5 @@ module.exports = {
         "\\.ts$": "ts-jest",
         "\\.tsx$": "ts-jest"
     },
-    testPathIgnorePatterns: ["src/__tests__/test-utils"],
     verbose: false,
 };
