@@ -5,9 +5,9 @@ describe('Initialize Creator', () => {
   it('should return action', () => {
     const action = initialize('TEST_DATA');
 
-    expect(action).toEqual({
+    expect({
       type: actions.INITIALIZE,
       data: 'TEST_DATA',
-    });
+    }).toEqual(action);
   });
 });
