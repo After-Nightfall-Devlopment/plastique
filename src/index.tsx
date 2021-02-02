@@ -2,10 +2,31 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'connected-react-router';
+import { Route } from 'react-router';
+import { createStore } from './configs/redux/store';
+import { createHashHistory } from 'history';
+import routes from './configs/constants/routes';
+import DashboardScreen from './components/top-level-components/Dashboard';
+import { initialize } from './creators/initialize';
+
+const history = createHashHistory(),
+  store = createStore(history);
+
+store.dispatch(initialize('REDUX_TEST'));
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <App>
+          <div className={'route'}>
+            <Route component={DashboardScreen} exact path={routes.DASHBOARD} />
+          </div>
+        </App>
+      </ConnectedRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
