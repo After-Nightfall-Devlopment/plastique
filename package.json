@@ -61,7 +61,8 @@
     "test": "react-scripts test -- --config jest.config.js",
     "eject": "react-scripts eject",
     "fixLint": "eslint './src/**/*.{ts,tsx}' --fix",
-    "lint": "eslint './src/**/*.{ts,tsx}'"
+    "lint": "eslint './src/**/*.{ts,tsx}'",
+    "deploy": "npm run build"
   },
   "eslintConfig": {
     "extends": [
