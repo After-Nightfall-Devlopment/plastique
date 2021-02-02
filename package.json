@@ -62,7 +62,7 @@
     "eject": "react-scripts eject",
     "fixLint": "eslint './src/**/*.{ts,tsx}' --fix",
     "lint": "eslint './src/**/*.{ts,tsx}'",
-    "deploy": "npm run build"
+    "deploy": "npm ci && npm run build"
   },
   "eslintConfig": {
     "extends": [
