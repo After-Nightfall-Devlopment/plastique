@@ -9,6 +9,7 @@ import { createStore } from './configs/redux/store';
 import { createHashHistory } from 'history';
 import routes from './configs/constants/routes';
 import DashboardScreen from './components/top-level-components/Dashboard';
+import StoreCreatorScreen from './components/top-level-components/store-creator/StoreCreator';
 import { initialize } from './creators/initialize';
 
 const history = createHashHistory(),
@@ -81,6 +82,11 @@ ReactDOM.render(
         <App>
           <div className={'route'}>
             <Route component={DashboardScreen} exact path={routes.DASHBOARD} />
+            <Route
+              component={StoreCreatorScreen}
+              exact
+              path={routes.STORE_CREATOR}
+            />
           </div>
         </App>
       </ConnectedRouter>
